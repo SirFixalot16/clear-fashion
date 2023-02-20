@@ -35,6 +35,13 @@ console.log(MY_FAVORITE_BRANDS[0]);
 // I can find on these e-shops
 // 2. Log the variable
 
+var tshirt1 = {'url': 'https://www.faguo-store.com/fr/vetements/8021-arcy-t-shirt-en-coton-recycle-marine-tourne-disque-navy-.html'};
+var tshirt2 = {'url': 'https://www.loom.fr/collections/t-shirts-polos/products/le-t-shirt-homme'};
+var tshirt3 = {'url': 'https://ecclo.fr/products/t-shirt-bleu'};
+
+
+console.log(tshirt1);
+
 /**
  * 👕
  * Easy 😁?
@@ -48,15 +55,27 @@ console.log(MY_FAVORITE_BRANDS[0]);
 // 1. Create a variable and assign it the number of products
 // 2. Log the variable
 
+const { marketplace } = require('./data.js');
+var n_products = marketplace.length;
+console.log(n_products)
+
 // 🎯 TODO 3: Brands name
 // 1. Create a variable and assign it the list of brands name only
 // 2. Log the variable
 // 3. Log how many brands we have
 
+var brandname = {};
+brandname = marketplace.map(o => ({brand: o.brand}));
+console.log(brandname);
+console.log(brandname.length)
+
 // 🎯 TODO 4: Sort by price
 // 1. Create a function to sort the marketplace products by price
 // 2. Create a variable and assign it the list of products by price from lowest to highest
 // 3. Log the variable
+
+var marketplace1 = marketplace;
+console.log(marketplace1);
 
 // 🎯 TODO 5: Sort by date
 // 1. Create a function to sort the marketplace objects by products date
