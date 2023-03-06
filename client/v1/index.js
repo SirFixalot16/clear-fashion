@@ -75,12 +75,17 @@ console.log(brandname.length)
 // 3. Log the variable
 
 var marketplace1 = marketplace;
+// console.log(marketplace1);
+marketplace1.sort((a, b) => a.price - b.price);
 console.log(marketplace1);
+  
 
 // 🎯 TODO 5: Sort by date
 // 1. Create a function to sort the marketplace objects by products date
 // 2. Create a variable and assign it the list of products by date from recent to old
 // 3. Log the variable
+
+
 
 // 🎯 TODO 6: Filter a specific price range
 // 1. Filter the list of products between 50€ and 100€
