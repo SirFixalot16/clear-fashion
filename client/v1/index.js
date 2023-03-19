@@ -85,9 +85,9 @@ console.log(marketplace1);
 // 2. Create a variable and assign it the list of products by date from recent to old
 // 3. Log the variable
 
-var date = marketplace.map(o => ({date: o.released}));
+// var date = marketplace.map(o => ({date: o.released}));
 var marketplace2 = marketplace;
-console.log(date);
+// console.log(date);
 
 marketplace2.sort(function(a,b) {
   a = (String(Object.values(a.released))).split("-").join("");
