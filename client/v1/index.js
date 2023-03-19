@@ -101,13 +101,13 @@ console.log(marketplace2);
 // 1. Filter the list of products between 50€ and 100€
 // 2. Log the list
 
-function bet(value) {
-  return (value >= 50 && value <= 100);
-}
-
 var marketplace3 = marketplace;
-// marketplace3.price.filter(bet);
-// console.log(marketplace3);
+var marketfiltered;
+marketfiltered = marketplace3.filter(function (el){
+  return el.price >= 50 && el.price <= 100;
+});
+
+console.log(marketfiltered);
 
 // 🎯 TODO 7: Average price
 // 1. Determine the average price of the marketplace
