@@ -85,11 +85,29 @@ console.log(marketplace1);
 // 2. Create a variable and assign it the list of products by date from recent to old
 // 3. Log the variable
 
+var date = marketplace.map(o => ({date: o.released}));
+var marketplace2 = marketplace;
+console.log(date);
 
+marketplace2.sort(function(a,b) {
+  a = (String(Object.values(a.released))).split("-").join("");
+  b = (String(Object.values(b.released))).split("-").join("");
+  return a > b ? 1 : a < b ? -1 : 0;
+});
+
+console.log(marketplace2);
 
 // 🎯 TODO 6: Filter a specific price range
 // 1. Filter the list of products between 50€ and 100€
 // 2. Log the list
+
+function bet(value) {
+  return (value >= 50 && value <= 100);
+}
+
+var marketplace3 = marketplace;
+// marketplace3.price.filter(bet);
+// console.log(marketplace3);
 
 // 🎯 TODO 7: Average price
 // 1. Determine the average price of the marketplace
