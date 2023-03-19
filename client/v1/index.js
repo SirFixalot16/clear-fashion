@@ -113,6 +113,22 @@ var marketplace3 = marketplace;
 // 1. Determine the average price of the marketplace
 // 2. Log the average
 
+var price = {};
+price = marketplace.map(o => ({price: o.price}));
+
+var pric3 = [];
+for(let x = 0; x< price.length; x++){
+  pric3[x] = parseInt(Object.values(price[x]));
+}
+
+var avg = 0;
+for(let x = 0; x< pric3.length; x++){
+  avg = avg + pric3[x];
+}
+avg = avg/(pric3.length);
+
+console.log(avg);
+
 /**
  * 🏎
  * We are almost done with the `marketplace` variable
