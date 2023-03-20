@@ -152,6 +152,8 @@ console.log(avg);
 // 2. Log the variable
 // 3. Log the number of products by brands
 
+
+
 // 🎯 TODO 9: Sort by price for each brand
 // 1. For each brand, sort the products by price, from highest to lowest
 // 2. Log the sort
@@ -363,17 +365,45 @@ const COTELE_PARIS = [
 // // 1. Log if we have new products only (true or false)
 // // A new product is a product `released` less than 2 weeks.
 
+var currentDate = 20230101;
+var datefiltered;
+datefiltered = COTELE_PARIS.filter(function (el){
+  return parseInt((String(Object.values(el.released))).split("-").join("").split(",").join("")) > (currentDate-100);
+});
+console.log(datefiltered);
+
+
 // 🎯 TODO 2: Reasonable price
 // // 1. Log if coteleparis is a reasonable price shop (true or false)
 // // A reasonable price if all the products are less than 100€
+
+var boncherie = 100;
+var pricefiltered;
+pricefiltered = COTELE_PARIS.filter(function (el){
+  return el.price < boncherie;
+});
+console.log(pricefiltered);
+
 
 // 🎯 TODO 3: Find a specific product
 // 1. Find the product with the uuid `2b9a47e3-ed73-52f6-8b91-379e9c8e526c`
 // 2. Log the product
 
+var id = "2b9a47e3-ed73-52f6-8b91-379e9c8e526c";
+var idfiltered;
+idfiltered = COTELE_PARIS.filter(function (el){
+  return el.uuid == id;
+});
+console.log(idfiltered);
+
 // 🎯 TODO 4: Delete a specific product
 // 1. Delete the product with the uuid `2b9a47e3-ed73-52f6-8b91-379e9c8e526c`
 // 2. Log the new list of product
+
+idfiltered = COTELE_PARIS.filter(function (el){
+  return el.uuid != id;
+});
+console.log(idfiltered);
 
 // 🎯 TODO 5: Save the favorite product
 // We declare and assign a variable called `blueJacket`
@@ -397,6 +427,9 @@ jacket.favorite = true;
 
 // 1. Log `blueJacket` and `jacket` variables
 // 2. What do you notice?
+//console.log(blueJacket);
+//console.log(jacket);
+// Not much
 
 // we make a new assignment again
 blueJacket = {
@@ -412,6 +445,9 @@ blueJacket = {
 };
 
 // 3. Update `jacket` property with `favorite` to true WITHOUT changing blueJacket properties
+let strong = JSON.stringify(blueJacket);
+console.log(blueJacket);
+console.log(jacket);
 
 /**
  * 🎬
@@ -422,3 +458,13 @@ blueJacket = {
 // 🎯 LAST TODO: Save in localStorage
 // 1. Save MY_FAVORITE_BRANDS in the localStorage
 // 2. log the localStorage
+
+const fs = require('fs');
+var jsonContent = JSON.stringify(MY_FAVORITE_BRANDS);
+fs.writeFile("./myfavbrands.json", jsonContent, 'utf8', function (err) {
+  if (err) {
+      return console.log(err);
+  }
+
+  console.log("The file was saved!");
+}); 
